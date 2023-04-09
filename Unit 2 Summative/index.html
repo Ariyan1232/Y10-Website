@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css"> <!--Identifies index.css as the stylesheet-->
 
   </head>
   <body>
@@ -19,15 +19,19 @@
     </nav>
     <div>
       <button type="button" id="jeff" onclick="jeff()">Jeff</button> <!--Creates a button that follows the command from the function named Jeff-->
-      <!--<button type="button" id="simon" onclick="jeff()">Simon</button>
-      <button type="button" id="mary" onclick="jeff()">Mary</button>
-      <button type="button" id="sam" onclick="jeff()">Sam</button>-->
+      <button type="button" id="simon" onclick="bob()">Bob</button>
+      <button type="button" id="mary" onclick="mary()">Mary</button>
+      <button type="button" id="sam" onclick="sam()">Sam</button>
     </div>
     <div class="post"> <!--Creates a section for the first post (Class allows us to refer to this div in the CSS file)-->
-    <div class="imageText">
+    <div class="imageText"> 
       <h3 id="fujiText">Mount Fuji</h3> <!--Creates the header text for describing the image-->
       <img src="mountFuji.jpg" alt="MountFuji" width="300" height="200"> <!--Prints the image and sets width and height parameters for the image-->
-      <h6>Mount Fuji is a majestic and iconic symbol of Japan, located on Honshu Island, approximately 100 kilometers southwest of Tokyo. Standing at a height of 3,776 meters, it is the highest mountain in Japan and has been a source of inspiration for artists and writers for centuries. Mount Fuji is also a popular destination for hikers and tourists, with its breathtaking views and the opportunity to witness the stunning sunrise from its summit. The mountain is considered sacred by the Japanese and has been designated a UNESCO World Heritage Site. Mount Fuji is a must-see destination for anyone visiting Japan, as it is a symbol of the country's natural beauty and cultural significance.</h6> <!--Develops a heading text in the smallest font size available as a header. Text is from Chat GPT.-->
+      <h6 id="para">Mount Fuji is a majestic and iconic symbol of Japan, located on Honshu Island, approximately 100 kilometers southwest of Tokyo. Standing at a height of 3,776 meters, it is the highest mountain in Japan and has been a source of inspiration for artists and writers for centuries. Mount Fuji is also a popular destination for hikers and tourists, with its breathtaking views and the opportunity to witness the stunning sunrise from its summit. The mountain is considered sacred by the Japanese and has been designated a UNESCO World Heritage Site. Mount Fuji is a must-see destination for anyone visiting Japan, as it is a symbol of the country's natural beauty and cultural significance.</h6> <!--Develops a heading text in the smallest font size available as a header. Text is from Chat GPT.-->
+      <div class="profile">
+        <img src="person-circle.svg" alt="Logo" width="30" height="24" class="profileLogo"> <!--Develops an image and sets width/height parameters-->
+        <h5 id="profile">John</h5> <!--Writes the word John (ID allows us to refer to this line in our Java Script code)-->
+      </div> <!-- /div allows us to close a div block-->
     </div>
     </div>
     <div class="post">
@@ -35,6 +39,10 @@
       <h3 id="pyramidText">Great Pyramids</h3> <!--Creates the header text for describing the image-->
       <img src="pyramids.png" alt="Great Pyramid" width="300" height="200"><!--Prints the image and sets width and height parameters for the image-->
       <h6>The Great Pyramids of Giza are one of the most awe-inspiring ancient wonders of the world. Located on the outskirts of Cairo, Egypt, these massive structures were built more than 4,500 years ago and have fascinated people for centuries. The three pyramids, which were constructed for Pharaohs Khufu, Khafre, and Menkaure, are a testament to the skill and engineering prowess of the ancient Egyptians. Each pyramid was constructed using millions of limestone blocks, some weighing as much as 80 tons, and the precision with which they were placed is astounding. The Great Pyramids continue to be a source of mystery and wonder, with many theories about how they were built and what their purpose may have been. Visiting the pyramids is an unforgettable experience, and standing in their shadow is a humbling reminder of the incredible achievements of the human race.</h6>
+      <div class="profile">
+        <img src="person-circle.svg" alt="Logo" width="30" height="24" class="profileLogo">
+        <h5>John</h5>
+      </div>
     </div>
   </div>
   <div class="post">
@@ -42,30 +50,53 @@
       <h3 id="pyramid2Text">Arc De Triomphe</h3> <!--Creates the header text for describing the image-->
       <img src="arc.jpg" alt="Great Pyramid" width="300" height="200"><!--Prints the image and sets width and height parameters for the image-->
       <h6>The Arc de Triomphe is an iconic landmark in Paris, France, located at the western end of the famous Champs-Elysées avenue. The monument was built in the 19th century to commemorate the victories of the French Army, particularly during the Napoleonic Wars. The Arc de Triomphe is an imposing structure, standing 50 meters tall and 45 meters wide, with intricate carvings and sculptures adorning its façade. The names of French military leaders and the battles they won are inscribed on the walls of the monument. Visitors can climb the stairs to the top of the arch and take in breathtaking panoramic views of the city, including the Eiffel Tower and the Sacré-Coeur basilica. The Arc de Triomphe is a symbol of French national pride and a must-see attraction for anyone visiting Paris.</h6>
+      <div class="profile">
+        <img src="person-circle.svg" alt="Logo" width="30" height="24" class="profileLogo">
+        <h5>John</h5>
+      </div>
     </div>
   </div>
     <script type="text/javascript"> //Sets the scripting language to java script
-        class Trip{
-          constructor(dest, paragraph) {
-            this.dest = dest;
+        class Trip{ //Creates a class named Trip
+          constructor(dest, paragraph, name) { //Constructor allows us to create multiple objects
+            this.dest = dest; //Allows us to refer to an object inside the contructor
             this.paragraph = paragraph;
+            this.name = name;
 
-            //this.listElement = person;
-            //this.textList = [
-              //person1,
-              //person2,
-              //person3,
-              //person4
-            //];
           }
         }
-        const person1 = new Trip("Statue of Liberty","The Statue of Liberty is a colossal neoclassical sculpture located on Liberty Island in New York Harbor. Designed by French sculptor Frédéric-Auguste Bartholdi and built by Gustave Eiffel, the statue was a gift from France to the United States in 1886 to commemorate the centennial of American independence. The statue is made of copper sheets, and its green color comes from the natural patina that has developed over time. The statue is a symbol of freedom and democracy and has become one of the most recognizable landmarks in the world. It has welcomed millions of immigrants to the United States and remains an enduring symbol of hope and opportunity for people around the globe." );
-        const person2 = new Person("Eiffel Tower", "The Eiffel Tower is an iconic wrought-iron lattice tower located in Paris, France. It was designed by French engineer Gustave Eiffel and built for the 1889 World's Fair. At 324 meters tall, it was the tallest man-made structure in the world at the time of its construction and remained so until the completion of the Chrysler Building in New York City in 1930. The tower is named after Gustave Eiffel and has become one of the most recognizable landmarks in the world, attracting millions of visitors each year. The tower has three observation decks, offering stunning views of Paris, and is illuminated by thousands of sparkling lights each night, making it a truly magical sight to behold. The Eiffel Tower is a symbol of France and a testament to the ingenuity and creativity of human engineering.");
-        const person3 = new Person("Mount Everest", "Mount Everest is the tallest mountain on Earth, standing at a towering height of 8,848 meters above sea level. It is located in the Himalayas, on the border between Nepal and Tibet. The mountain was named after Sir George Everest, a Welsh surveyor who served as the Surveyor General of India from 1830 to 1843. Climbing Mount Everest is considered the ultimate achievement for many mountaineers and adventurers. However, it is also a highly dangerous and challenging endeavor, with extreme weather conditions, avalanches, and altitude sickness posing serious risks. Despite these risks, thousands of people attempt to climb Mount Everest every year, making it one of the most popular and iconic mountaineering destinations in the world. The mountain also holds great cultural and spiritual significance for the people of Nepal and Tibet, and is revered as a sacred site by many.");
-        const person4 = new Person("Big Ben", "Big Ben is the nickname for the iconic clock tower located at the north end of the Palace of Westminster in London, England. The tower, officially called the Elizabeth Tower, stands at 96 meters tall and was completed in 1859. The name Big Ben actually refers to the bell inside the tower, which weighs 13.5 tons and strikes the hour with a distinctive chime that has become synonymous with the sound of London. The tower and clock are widely regarded as one of the most recognizable landmarks in the world and are a symbol of British culture and history. Despite the tower undergoing major renovations in recent years, the famous chimes of Big Ben still ring out across London, marking the passage of time and reminding visitors and locals alike of the tower's timeless appeal.")
-        function jeff() {
-          document.getElementById("fujiText").innerHTML = person1.Dest();
+        const person1 = new Trip("Statue of Liberty","The Statue of Liberty is a colossal neoclassical sculpture located on Liberty Island in New York Harbor. Designed by French sculptor Frédéric-Auguste Bartholdi and built by Gustave Eiffel, the statue was a gift from France to the United States in 1886 to commemorate the centennial of American independence. The statue is made of copper sheets, and its green color comes from the natural patina that has developed over time. The statue is a symbol of freedom and democracy and has become one of the most recognizable landmarks in the world. It has welcomed millions of immigrants to the United States and remains an enduring symbol of hope and opportunity for people around the globe.","Jeff" ); //Constant's allow us to define values for objects inside the contructor
+        const person2 = new Trip("Eiffel Tower", "The Eiffel Tower is an iconic wrought-iron lattice tower located in Paris, France. It was designed by French engineer Gustave Eiffel and built for the 1889 World's Fair. At 324 meters tall, it was the tallest man-made structure in the world at the time of its construction and remained so until the completion of the Chrysler Building in New York City in 1930. The tower is named after Gustave Eiffel and has become one of the most recognizable landmarks in the world, attracting millions of visitors each year. The tower has three observation decks, offering stunning views of Paris, and is illuminated by thousands of sparkling lights each night, making it a truly magical sight to behold. The Eiffel Tower is a symbol of France and a testament to the ingenuity and creativity of human engineering.","Bob");
+        const person3 = new Trip("Mount Everest", "Mount Everest is the tallest mountain on Earth, standing at a towering height of 8,848 meters above sea level. It is located in the Himalayas, on the border between Nepal and Tibet. The mountain was named after Sir George Everest, a Welsh surveyor who served as the Surveyor General of India from 1830 to 1843. Climbing Mount Everest is considered the ultimate achievement for many mountaineers and adventurers. However, it is also a highly dangerous and challenging endeavor, with extreme weather conditions, avalanches, and altitude sickness posing serious risks. Despite these risks, thousands of people attempt to climb Mount Everest every year, making it one of the most popular and iconic mountaineering destinations in the world. The mountain also holds great cultural and spiritual significance for the people of Nepal and Tibet, and is revered as a sacred site by many.","Mary");
+        const person4 = new Trip("Big Ben", "Big Ben is the nickname for the iconic clock tower located at the north end of the Palace of Westminster in London, England. The tower, officially called the Elizabeth Tower, stands at 96 meters tall and was completed in 1859. The name Big Ben actually refers to the bell inside the tower, which weighs 13.5 tons and strikes the hour with a distinctive chime that has become synonymous with the sound of London. The tower and clock are widely regarded as one of the most recognizable landmarks in the world and are a symbol of British culture and history. Despite the tower undergoing major renovations in recent years, the famous chimes of Big Ben still ring out across London, marking the passage of time and reminding visitors and locals alike of the tower's timeless appeal.","Sam")
+        function jeff() { //Creates a function which will be used by the buttons we created above
+          document.getElementById("fujiText").innerHTML = person1.dest;  //Prints text defined in the const's in the correct place once the button is clicked
+          document.getElementById("para").innerHTML = person1.paragraph; //Prints text defined in the const's in the correct place once the button is clicked
+          document.getElementById("profile").innerHTML = person1.name; //Prints text defined in the const's in the correct place once the button is clicked
         }
-    </script>
+        function bob() {
+          document.getElementById("fujiText").innerHTML = person2.dest;
+          document.getElementById("para").innerHTML = person2.paragraph;
+          document.getElementById("profile").innerHTML = person2.name;
+        }
+        function mary() {
+          document.getElementById("fujiText").innerHTML = person3.dest;
+          document.getElementById("para").innerHTML = person3.paragraph;
+          document.getElementById("profile").innerHTML = person3.name;
+        }
+        function sam() {
+          document.getElementById("fujiText").innerHTML = person4.dest;
+          document.getElementById("para").innerHTML = person4.paragraph;
+          document.getElementById("profile").innerHTML = person4.name;
+        }
+    </script> <!--Closes the Java Script section of the file-->
   </body>
 </html>
+
+
+<!--
+  Sources:
+- https://www.theserverside.com/definition/const#:~:text=Const%20(constant)%20in%20programming%20is,objects%20are%20often%20termed%20literals.
+- W3 Schools
+- Chat GPT "Only for the text about the tourist attractions"
+-->

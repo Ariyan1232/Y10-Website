@@ -3,16 +3,33 @@
     margin-right: 5%; /*Spaces the div from the right of the page*/
     background-color: #adaca8; /*Adds a background colour to the div*/
     padding: 3%; /*Adds spacing around the entire div*/
-    border-radius: 10px; 
-    margin: 10px;
+    border-radius: 10px; /*Curves the edges of the div */
+    margin: 10px; /*Creates a margin (spacing) around the entire div*/
 }
 
 h3 {
-    text-align: center;
+    text-align: center; /*Creates text in the center of the screen*/
 }
 
 img {
-    margin-left: 44%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-left: 40%; /*Spaces the image from the left of the div*/
+    margin-top: 1%; /*Spaces the image from the top of the div*/
+    margin-bottom: 1%; /*Spaces image from the bottom of the div*/
+    
+}
+
+.profile {
+    width: 90%; /*Specifies the divide of the columns inside the div*/
+}
+
+h5 {
+    float: right; /*Moves text to the right column*/
+    text-align: center; /*Centralizes the text inside the column*/
+    margin-top: 1%; /*Moves the text further down*/
+}
+
+
+.profileLogo {
+    float: left; /*Moves image to the left column*/
+    margin-left: 93%; /*Spaces image from what's to left of it*/
 }
